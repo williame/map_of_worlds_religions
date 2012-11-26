@@ -25,6 +25,7 @@ function play() {
 function next() {
 	if(running) {
 		if(++year >= years.length) {
+			year--;
 			running = false;
 		} else {
 			play();
@@ -41,6 +42,7 @@ function info(evt) {
         	x = evt.pageX - canvas.offsetLeft,
         	y = evt.pageY - canvas.offsetTop;
 	if(y > height*cellHeight) {
+		tooltip.style.display = "none";
 		if(evt.type != "mousedown") return;
 		var	minX = barMargin*2+barHeight,
 			maxX = canvas.width-barMargin*3-barHeight;
