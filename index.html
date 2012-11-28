@@ -13,11 +13,11 @@ function play() {
 	}
 	var audio = document.getElementById("audio");
 	audio.pause();
-	audio.onended = next;
-	audio.onerror = function(evt) {
+	audio.addEventListener("ended",next,false);
+	audio.addEventListener("error",function(evt) {
 		console.log("onerror",evt);
 		play.timeout = setTimeout(next,1000);
-	};
+	},false);
 	audio.src = "map_v4_"+years[year]+".ogg";
 	audio.play();
 }
@@ -216,9 +216,12 @@ function init() {
 </script>
 <body style="font-family:sans-serif;" onload="init()">
 <div id="tooltip" style="position:absolute; display:none; background-color:yellow; color:blue;"></div>
+<noscript>
+Sorry, you need to enable Javascript to see this interactive map :(<br/>
+</noscript>
 <canvas id="canvas">
-Sorry, you don't have a canvas to visualise on :(
+Sorry, you don't have a canvas to visualise on :(<br/>
 </canvas>
-<audio id="audio" type="audio/ogg">Sorry, your browser does not support audio :(</audio>
+<audio id="audio" type="audio/ogg">Sorry, your browser doesn't seem to support audio :(</audio>
 </body>
 </html>
