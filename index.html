@@ -76,7 +76,7 @@ function info(evt) {
 	}
 }
 
-function fillRoundedRect(ctx,x,y,w,h,r) {
+function fillRoundedRect(ctx,x,y,w,h,r,outline) {
 	ctx.beginPath();
 	ctx.moveTo(x+r, y);
 	ctx.arcTo(x+w, y,   x+w, y+h, r);
@@ -104,7 +104,7 @@ function draw() {
 		for(var x=0; x<width; x++) {
 			var key = ""+(x+1)+"_"+(y+1)+"_"+year;
 			ctx.fillStyle = religions[mapData[key]].colour;
-			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth,cellHeight);
+			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth-0.25,cellHeight-0.25);
 		}
 	// year bar
 	ctx.fillStyle = "#ffffff";
