@@ -13,11 +13,14 @@ function play() {
 	}
 	var audio = document.getElementById("audio");
 	audio.pause();
-	audio.addEventListener("ended",next,false);
-	audio.addEventListener("error",function(evt) {
-		console.log("onerror",evt);
-		play.timeout = setTimeout(next,1000);
-	},false);
+	if(!play.audio_events_added) {
+		audio.addEventListener("ended",next,false);
+		audio.addEventListener("error",function(evt) {
+			console.log("onerror",evt);
+			play.timeout = setTimeout(next,1000);
+		},false);
+		play.audio_events_added = true;
+	}
 	audio.src = "map_v4_"+years[year]+".ogg";
 	audio.play();
 }
