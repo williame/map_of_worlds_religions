@@ -85,13 +85,24 @@ function fillRoundedRect(ctx,x,y,w,h,r) {
 
 function draw() {
 	var ctx = canvas.getContext("2d");
+	ctx.font = "bold 15px sans-serif";
+	ctx.fillStyle = "#ffffff";
+	if(!years.length) {
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		var	label = "loading, please wait...",
+			w = ctx.measureText(label).width;
+		ctx.fillStyle = "#ff7070";
+		fillRoundedRect(ctx,(canvas.width-w-barMargin)/2,canvas.height / 2,w+barMargin*2,barHeight,barMargin);
+		ctx.fillStyle = "#ffffff";
+		ctx.fillText(label,(canvas.width-w)/2,(canvas.height / 2)+20);
+		return;
+	}
 	for(var y=0; y<height; y++)
 		for(var x=0; x<width; x++) {
 			var key = ""+(x+1)+"_"+(y+1)+"_"+year;
 			ctx.fillStyle = religions[mapData[key]].colour;
 			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth,cellHeight);
 		}
-	ctx.font = "bold 15px sans-serif";
 	// year bar
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0,height*cellHeight,canvas.width,barHeight);
@@ -188,6 +199,7 @@ function setReligions(data) {
 
 function init() {
 	canvas = document.getElementById("canvas");
+	draw();
 	canvas.addEventListener('mousedown',info,false);
 	canvas.addEventListener('mousemove',info,false);
 	// load the colours
