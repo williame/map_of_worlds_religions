@@ -35,6 +35,30 @@ function next() {
 		}
 		draw();
 	}
+	hideTooltip();
+}
+
+function showTooltip(msg,x,y) {
+	var tooltip = document.getElementById("tooltip");
+	if(msg) {
+		var	innerHTML = escape(msg).replace(/%(..)/g,"&#x$1;"),
+			xofs = 20,
+			yofs = 10;
+		innerHTML += "<b style=\""+
+			"position: absolute; top: -"+yofs+"px; left: "+(xofs-10)+"px; "+
+			"margin: 0; border-top: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; "+
+			"border-bottom: 10px solid white; "+
+			"padding: 0; width: 0; height: 0; "+
+			"\"></b>";
+		tooltip.innerHTML = innerHTML;
+		tooltip.style.display = "";
+		tooltip.style.left = ""+(x-xofs)+"px";
+		tooltip.style.top = ""+(y+yofs)+"px";
+	} else
+		hideTooltip();
+}
+
+function hideTooltip() {
 	tooltip.style.display = "none";
 }
 
@@ -45,7 +69,7 @@ function info(evt) {
         	x = evt.pageX - canvas.offsetLeft,
         	y = evt.pageY - canvas.offsetTop;
 	if(y > height*cellHeight) {
-		tooltip.style.display = "none";
+		hideTooltip();
 		if(evt.type != "mousedown") return;
 		var	minX = barMargin*2+barHeight,
 			maxX = canvas.width-barMargin*3-barHeight;
@@ -60,19 +84,12 @@ function info(evt) {
 			year = Math.min(parseInt(x/(maxX/years.length)),years.length-1);
 			play();
 		}
-		tooltip.style.display = "none";
+		hideTooltip();
 		draw();
 	} else {
 		x = parseInt(x / cellWidth);
 		y = parseInt(y / cellHeight);
-		var religion = mapData[""+(x+1)+"_"+(y+1)+"_"+year];
-		if(religion) {
-			tooltip.innerHTML = escape(religion).replace(/%(..)/g,"&#x$1;");
-			tooltip.style.display = "";
-			tooltip.style.left = ""+(evt.pageX+10)+"px";
-			tooltip.style.top = ""+evt.pageY+"px";
-		} else
-			tooltip.style.display = "none";
+		showTooltip(mapData[year][y][x],evt.pageX,evt.pageY);
 	}
 }
 
@@ -242,6 +259,8 @@ function init() {
 	draw();
 	canvas.addEventListener('mousedown',info,false);
 	canvas.addEventListener('mousemove',info,false);
+	document.body.addEventListener('mousedown',hideTooltip,true);
+	document.body.addEventListener('mousemove',hideTooltip,true);
 	// load the colours
 	var doc = new XMLHttpRequest();
 	doc.open("GET","map_v4_religions.tsv",true);
@@ -255,7 +274,11 @@ function init() {
 
 </script>
 <body style="font-family:sans-serif;" onload="init()">
-<div id="tooltip" style="position:absolute; display:none; background-color:yellow; color:blue;"></div>
+<div id="tooltip" style="position:absolute; display:none; background-color:white; color:blue;
+	margin: 3px 0; padding: 3px 5px; 
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
+	border-color: blue; border-width: thin; border-style: solid;
+	"></div>
 <noscript>
 Sorry, you need to enable Javascript to see this interactive map :(<br/>
 </noscript>
