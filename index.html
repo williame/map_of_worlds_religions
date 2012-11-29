@@ -2,7 +2,7 @@
 <head><title>World History Of: Religions</title>
 <script type="text/javascript">
 
-var mapData = {}, width = 0, height = 0, religions = {}, years = [];
+var mapData, width = 0, height = 0, religions = {}, years = [];
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
 var canvas, year = 0, running = false;
 
@@ -90,6 +90,7 @@ function draw() {
 	var ctx = canvas.getContext("2d");
 	ctx.font = "bold 15px sans-serif";
 	ctx.fillStyle = "#ffffff";
+	ctx.clearRect(0,0,canvas.width,canvas.height);
 	if(!years.length) {
 		ctx.clearRect(0,0,canvas.width,canvas.height);
 		var	label = "loading, please wait...",
@@ -100,12 +101,33 @@ function draw() {
 		ctx.fillText(label,(canvas.width-w)/2,(canvas.height / 2)+20);
 		return;
 	}
-	for(var y=0; y<height; y++)
+	var	data = mapData[year],
+		prevRow = [];
+	for(var y=0; y<height; y++) {
+		var	row = data[y],
+			prevCol = "";
 		for(var x=0; x<width; x++) {
-			var key = ""+(x+1)+"_"+(y+1)+"_"+year;
-			ctx.fillStyle = religions[mapData[key]].colour;
+			var cell = row[x];
+			ctx.fillStyle = religions[cell].colour;
 			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth-0.25,cellHeight-0.25);
+			if(cell != prevCol) {
+				ctx.fillStyle = "#808080";
+				ctx.beginPath();
+				ctx.moveTo(x*cellWidth-1,y*cellHeight);
+				ctx.lineTo(x*cellWidth-1,y*cellHeight+cellHeight);
+				ctx.stroke();
+			}
+			if(cell != prevRow[x]) {
+				ctx.fillStyle = "#808080";
+				ctx.beginPath();
+				ctx.moveTo(x*cellWidth-1,y*cellHeight);
+				ctx.lineTo(x*cellWidth+cellWidth,y*cellHeight);
+				ctx.stroke();
+			}
+			prevCol = cell;
 		}
+		prevRow = row;
+	}
 	// year bar
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0,height*cellHeight,canvas.width,barHeight);
@@ -152,8 +174,11 @@ function makeColour(str) {
 function setData(data) {
 	var	rows = data.split("\n"),
 		row = rows[1].split("\t");
+	// get the years
 	for(var year=4; year<row.length-1; year++)
 		years.push(parseInt(row[year]));
+	// get the data into a hash table
+	data = {}; // reuse variable
 	for(var row=2; row<rows.length-1 && rows[row].length; row++) {
 		var cols = rows[row].split("\t");
 		width = Math.max(width,parseInt(cols[0]));
@@ -168,9 +193,21 @@ function setData(data) {
 					colour: makeColour(col),
 				};
 			}
-			mapData[key+"_"+year] = religions[col].key; // interning
+			data[key+"_"+year] = religions[col].key; // interning
 		}
 	}
+	// build the data as a 2D-array per year
+	mapData = [];
+	for(var year in years) {
+		mapData[year] = [];
+		for(var y=0; y<height; y++) {
+			var row = [];
+			for(var x=0; x<width; x++)
+				row.push(data[""+(x+1)+"_"+(y+1)+"_"+year] || "None");
+			mapData[year].push(row);
+		}
+	}
+	// draw it
 	canvas.width = width*cellWidth;
 	canvas.height = height*cellHeight + barHeight;
 	draw();
