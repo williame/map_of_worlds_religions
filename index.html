@@ -4,7 +4,7 @@
 
 var mapData, width = 0, height = 0, religions = {}, years = [];
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
-var canvas, year = 0, running = false;
+var canvas, year = 0, running = false, activeReligion = null;
 
 function play() {
 	if(play.timeout) {
@@ -59,14 +59,21 @@ function showTooltip(msg,x,y) {
 }
 
 function hideTooltip() {
+	if(activeReligion) {
+		activeReligion = null;
+		draw();
+	}
 	tooltip.style.display = "none";
 }
 
 function info(evt) {
-	if(!years.length) return;
 	evt = evt || window.event;
-	var	tooltip = document.getElementById("tooltip"),
-        	x = evt.pageX - canvas.offsetLeft,
+	evt.cancelBubble = true;
+	if(evt.stopPropagation)
+		evt.stopPropagation();
+	if(!mapData) return;
+	evt = evt || window.event;
+	var	x = evt.pageX - canvas.offsetLeft,
         	y = evt.pageY - canvas.offsetTop;
 	if(y > height*cellHeight) {
 		hideTooltip();
@@ -84,12 +91,16 @@ function info(evt) {
 			year = Math.min(parseInt(x/(maxX/years.length)),years.length-1);
 			play();
 		}
-		hideTooltip();
 		draw();
 	} else {
 		x = parseInt(x / cellWidth);
 		y = parseInt(y / cellHeight);
-		showTooltip(mapData[year][y][x],evt.pageX,evt.pageY);
+		var	religion = mapData[year][y][x],
+			prevReligion = activeReligion;
+		activeReligion = (religion!="Sea")? religion: null;
+		showTooltip(religion,evt.pageX,evt.pageY);
+		if(prevReligion != activeReligion)
+			draw();
 	}
 }
 
@@ -128,14 +139,14 @@ function draw() {
 			ctx.fillStyle = religions[cell].colour;
 			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth-0.25,cellHeight-0.25);
 			if(cell != prevCol) {
-				ctx.fillStyle = "#808080";
+				ctx.strokeStyle = (prevCol==activeReligion || cell==activeReligion)? "#ff2020": "#a0a0a0";
 				ctx.beginPath();
 				ctx.moveTo(x*cellWidth-1,y*cellHeight);
 				ctx.lineTo(x*cellWidth-1,y*cellHeight+cellHeight);
 				ctx.stroke();
 			}
 			if(cell != prevRow[x]) {
-				ctx.fillStyle = "#808080";
+				ctx.strokeStyle = (prevRow[x]==activeReligion || cell==activeReligion)? "#ff2020": "#a0a0a0";
 				ctx.beginPath();
 				ctx.moveTo(x*cellWidth-1,y*cellHeight);
 				ctx.lineTo(x*cellWidth+cellWidth,y*cellHeight);
@@ -259,8 +270,6 @@ function init() {
 	draw();
 	canvas.addEventListener('mousedown',info,false);
 	canvas.addEventListener('mousemove',info,false);
-	document.body.addEventListener('mousedown',hideTooltip,true);
-	document.body.addEventListener('mousemove',hideTooltip,true);
 	// load the colours
 	var doc = new XMLHttpRequest();
 	doc.open("GET","map_v4_religions.tsv",true);
