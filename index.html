@@ -6,7 +6,7 @@ var mapData, width = 0, height = 0, religions = {}, years = [];
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
 var canvas, year = 0, running = false, activeReligion = null;
 
-var speed = 500; // ms
+var speed = 500, muted; // ms
 
 function play() {
 	if(play.timeout) {
@@ -15,7 +15,7 @@ function play() {
 	}
 	var audio = document.getElementById("audio");
 	audio.pause();
-	if(audio.muted) {
+	if(muted) {
 		play.timeout = setTimeout(next,speed);
 		return;
 	}
@@ -97,9 +97,8 @@ function info(evt) {
 			if(running)
 				play();
 		} else if(x > minX+maxX) {
-			audio.muted = !audio.muted;
-			if(running)
-				play();
+			muted = !muted;
+			play();
 		} else {
 			running = false;
 			x = Math.min(x-minX,maxX);
@@ -110,7 +109,7 @@ function info(evt) {
 	} else {
 		x = parseInt(x / cellWidth);
 		y = parseInt(y / cellHeight);
-		var	religion = mapData[year][y][x],
+		var	religion = mapData[year] && mapData[year][y]? mapData[year][y][x]: null,
 			prevReligion = activeReligion;
 		activeReligion = (religion!="Sea")? religion: null;
 		showTooltip(activeReligion,evt.pageX,evt.pageY);
@@ -190,8 +189,8 @@ function draw() {
 	// mute button
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,canvas.width-barHeight*2+barMargin*2,height*cellHeight+barMargin,barHeight*2-barMargin*2,barHeight-barMargin*2,(barHeight-barMargin*2)/2);
-	ctx.fillStyle = audio.muted? "#ff7070":"#ffffff";
-	ctx.fillText(audio.muted?"audio":"mute",canvas.width-barHeight*2+barMargin*3,canvas.height-barHeight/3);	
+	ctx.fillStyle = muted? "#ff7070":"#ffffff";
+	ctx.fillText(muted?"audio":"mute",canvas.width-barHeight*2+barMargin*3,canvas.height-barHeight/3);	
 	// year label
 	var label = years[year];
 	if(label < 0)
