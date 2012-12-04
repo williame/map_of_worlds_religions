@@ -66,7 +66,7 @@ for year, text in data:
     ofp = open(filename+".mp3",'wb') # because we assume bitrate etc is always the same, we simply concatentate
     for i,sentence in enumerate(parseText(text)):
         print i,len(sentence), sentence
-        response = opener.open(google_translate_url+'?q='+sentence.replace(' ','+')+'&tl=en')
+        response = opener.open(google_translate_url+'?q='+sentence.lower().replace(' ','+')+'&tl=en')
         ofp.write(response.read())
     ofp.close()
     os.system("mp3val %s.mp3 -f -nb"%filename);

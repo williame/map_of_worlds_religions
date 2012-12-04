@@ -21,7 +21,8 @@ function play() {
 		},false);
 		play.audio_events_added = true;
 	}
-	audio.src = "map_v4_"+years[year]+".ogg";
+	
+	audio.src = "map_v4_"+years[year]+(audio.canPlayType('audio/mpeg;')?".mp3":".ogg");
 	audio.play();
 }
 
