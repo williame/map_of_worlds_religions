@@ -6,6 +6,8 @@ var mapData, width = 0, height = 0, religions = {}, years = [];
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
 var canvas, year = 0, running = false, activeReligion = null;
 
+var speed = 500; // ms
+
 function play() {
 	if(play.timeout) {
 		clearTimeout(play.timeout);
@@ -13,16 +15,25 @@ function play() {
 	}
 	var audio = document.getElementById("audio");
 	audio.pause();
+	if(audio.muted) {
+		play.timeout = setTimeout(next,speed);
+		return;
+	}
 	if(!play.audio_events_added) {
 		audio.addEventListener("ended",next,false);
 		audio.addEventListener("error",function(evt) {
 			console.log("onerror",evt);
-			play.timeout = setTimeout(next,1000);
+			play.timeout = setTimeout(next,speed);
 		},false);
 		play.audio_events_added = true;
 	}
-	
-	audio.src = "map_v4_"+years[year]+(audio.canPlayType('audio/mpeg;')?".mp3":".ogg");
+	if(audio.canPlayType('audio/mpeg;')) {
+		audio.type = "audio/mpeg";
+		audio.src = "map_v4_"+years[year]+".mp3";
+	} else {
+		audio.type = "audio/ogg";
+		audio.src = "map_v4_"+years[year]+".ogg";
+	}
 	audio.play();
 }
 
@@ -80,15 +91,18 @@ function info(evt) {
 		hideTooltip();
 		if(evt.type != "mousedown") return;
 		var	minX = barMargin*2+barHeight,
-			maxX = canvas.width-barMargin*3-barHeight;
+			maxX = canvas.width-barMargin*3-barHeight*3;
 		if(x < minX) {
 			running = !running;
 			if(running)
 				play();
+		} else if(x > minX+maxX) {
+			audio.muted = !audio.muted;
+			if(running)
+				play();
 		} else {
 			running = false;
-			x -= minX;
-			x = Math.min(x,maxX);
+			x = Math.min(x-minX,maxX);
 			year = Math.min(parseInt(x/(maxX/years.length)),years.length-1);
 			play();
 		}
@@ -99,13 +113,13 @@ function info(evt) {
 		var	religion = mapData[year][y][x],
 			prevReligion = activeReligion;
 		activeReligion = (religion!="Sea")? religion: null;
-		showTooltip(religion,evt.pageX,evt.pageY);
+		showTooltip(activeReligion,evt.pageX,evt.pageY);
 		if(prevReligion != activeReligion)
 			draw();
 	}
 }
 
-function fillRoundedRect(ctx,x,y,w,h,r,outline) {
+function fillRoundedRect(ctx,x,y,w,h,r) {
 	ctx.beginPath();
 	ctx.moveTo(x+r, y);
 	ctx.arcTo(x+w, y,   x+w, y+h, r);
@@ -162,17 +176,22 @@ function draw() {
 	ctx.fillRect(0,height*cellHeight,canvas.width,barHeight);
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,barMargin*2+barHeight,height*cellHeight+barMargin,
-		canvas.width-barMargin*3-barHeight,
-		barHeight-barMargin*2,(barHeight-barMargin*2)/2);
+		canvas.width-barMargin*3-barHeight*3,
+		barHeight-barMargin*2,(barHeight*2-barMargin*4)/2);
 	ctx.fillStyle = "#ff7070";
 	fillRoundedRect(ctx,barMargin*2+barHeight,height*cellHeight+barMargin,
-		barMargin*2+barHeight+(canvas.width-barMargin-barHeight*2)*(year/years.length),
-		barHeight-barMargin*2,(barHeight-barMargin*2)/2);
+		barMargin*2+barHeight+(canvas.width-barMargin-barHeight*4)*(year/years.length),
+		barHeight-barMargin*2,(barHeight*2-barMargin*4)/2);
 	// play stop button
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,barMargin,height*cellHeight+barMargin,barHeight-barMargin,barHeight-barMargin*2,(barHeight-barMargin*2)/2);
 	ctx.fillStyle = "#ffffff";
-	ctx.fillText(running?"||":">",barHeight/3,canvas.height-barHeight/3);	
+	ctx.fillText(running?"||":">",barHeight/3,canvas.height-barHeight/3);
+	// mute button
+	ctx.fillStyle = "#707070";
+	fillRoundedRect(ctx,canvas.width-barHeight*2+barMargin*2,height*cellHeight+barMargin,barHeight*2-barMargin*2,barHeight-barMargin*2,(barHeight-barMargin*2)/2);
+	ctx.fillStyle = audio.muted? "#ff7070":"#ffffff";
+	ctx.fillText(audio.muted?"audio":"mute",canvas.width-barHeight*2+barMargin*3,canvas.height-barHeight/3);	
 	// year label
 	var label = years[year];
 	if(label < 0)
@@ -295,6 +314,6 @@ Sorry, you need to enable Javascript to see this interactive map :(<br/>
 <canvas id="canvas">
 Sorry, you don't have a canvas to visualise on :(<br/>
 </canvas>
-<audio id="audio" type="audio/ogg">Sorry, your browser doesn't seem to support audio :(</audio>
+<audio id="audio">Sorry, your browser doesn't seem to support audio :(</audio>
 </body>
 </html>
