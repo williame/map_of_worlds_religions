@@ -2,7 +2,7 @@
 <head><title>World History Of: Religions</title>
 <script type="text/javascript">
 
-var mapData, width = 0, height = 0, religions = {}, years = [];
+var mapData, width = 0, height = 0, religions = [], years = [], sea;
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
 var canvas, year = 0, running = false, activeReligion = null;
 
@@ -109,10 +109,10 @@ function info(evt) {
 	} else {
 		x = parseInt(x / cellWidth);
 		y = parseInt(y / cellHeight);
-		var	religion = mapData[year] && mapData[year][y]? mapData[year][y][x]: null,
+		var	religion = mapData[year*width*height+y*width+x],
 			prevReligion = activeReligion;
-		activeReligion = (religion!="Sea")? religion: null;
-		showTooltip(activeReligion,evt.pageX,evt.pageY);
+		activeReligion = (religion!=sea)? religion: null;
+		showTooltip(activeReligion? religions[activeReligion][1]: null,evt.pageX,evt.pageY);
 		if(prevReligion != activeReligion)
 			draw();
 	}
@@ -143,14 +143,13 @@ function draw() {
 		ctx.fillText(label,(canvas.width-w)/2,(canvas.height / 2)+20);
 		return;
 	}
-	var	data = mapData[year],
-		prevRow = [];
-	for(var y=0; y<height; y++) {
-		var	row = data[y],
-			prevCol = "";
+	var ofs = year*width*height, y, x, prevCol, prevRow, cell;
+	for(var y=0; y<height; y++)
 		for(var x=0; x<width; x++) {
-			var cell = row[x];
-			ctx.fillStyle = religions[cell].colour;
+			prevCol = cell;
+			prevRow = (ofs>=width? mapData[ofs-width]: null);
+			cell = mapData[ofs++];
+			ctx.fillStyle = religions[cell][2];
 			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth-0.25,cellHeight-0.25);
 			if(cell != prevCol) {
 				ctx.strokeStyle = (prevCol==activeReligion || cell==activeReligion)? "#ff2020": "#a0a0a0";
@@ -159,17 +158,14 @@ function draw() {
 				ctx.lineTo(x*cellWidth-1,y*cellHeight+cellHeight);
 				ctx.stroke();
 			}
-			if(cell != prevRow[x]) {
-				ctx.strokeStyle = (prevRow[x]==activeReligion || cell==activeReligion)? "#ff2020": "#a0a0a0";
+			if(cell != prevRow) {
+				ctx.strokeStyle = (prevRow==activeReligion || cell==activeReligion)? "#ff2020": "#a0a0a0";
 				ctx.beginPath();
 				ctx.moveTo(x*cellWidth-1,y*cellHeight);
 				ctx.lineTo(x*cellWidth+cellWidth,y*cellHeight);
 				ctx.stroke();
 			}
-			prevCol = cell;
 		}
-		prevRow = row;
-	}
 	// year bar
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0,height*cellHeight,canvas.width,barHeight);
@@ -204,84 +200,66 @@ function draw() {
 	ctx.fillText(label,30,height*cellHeight-30);
 }
 
-function makeColour(str) {
-    var hash = 0;
-    for(var i = 0; i < str.length; i++) {
-        var ch = str.charCodeAt(i);
-        hash = ((hash<<5)-hash)+ch;
-        hash = hash & hash;
-    }
-    hash = hash & 0xffffff;
-    str = hash.toString(16);
-    while(str.length < 6)
-    	    str = "0"+str;
-    return "#"+str;
-}
-
 function setData(data) {
 	var	rows = data.split("\n"),
-		row = rows[1].split("\t");
+		row, i, j, x, y,
+		numReligions = parseInt(rows[0]);
+	// get the religions
+	for(i=0; i<numReligions; i++) {
+		row = rows[1+i].split("\t");
+		j = row[0].charCodeAt(0);
+		if(row[1] == "Sea")
+			sea = j;
+		religions[j] = row;
+	}
 	// get the years
-	for(var year=4; year<row.length-1; year++)
-		years.push(parseInt(row[year]));
-	// get the data into a hash table
-	data = {}; // reuse variable
-	for(var row=2; row<rows.length-1 && rows[row].length; row++) {
-		var cols = rows[row].split("\t");
-		width = Math.max(width,parseInt(cols[0]));
-		height = Math.max(height,parseInt(cols[1]));
-		var key = cols[3];
-		for(var year in years) {
-			var col = cols[4+parseInt(year)];
-			if(!religions[col]) {
-				console.log("didn't find religion",col);
-				religions[col] = {
-					key: col,
-					colour: makeColour(col),
-				};
+	years = rows[1+numReligions].split("\t");
+	// various markers
+	row = rows[2+numReligions].split("\t");
+	width = parseInt(row[0]);
+	height = parseInt(row[1]);
+	var	dup = row[2].charCodeAt(0),
+		run_short = row[3].charCodeAt(0),
+		run_long = row[4].charCodeAt(0),
+		ch, flag, run,
+		ofs = 0, chksum = 0;
+	// decompress the data
+	row = rows[3+numReligions];
+	mapData = new Uint8Array(width*height*years.length);
+	for(i=0; i<row.length; i++) {
+		ch = row.charCodeAt(i);
+		flag = row.charCodeAt(i+1);
+		run = 1;
+		if(flag == run_short) {
+			run += row.charCodeAt(i+2)-64;
+			i += 2;
+		} else if(flag == run_long) {
+			run += (row.charCodeAt(i+2)-64)*(122-64);
+			run += row.charCodeAt(i+3)-64;
+			i += 3;
+		}
+		for(j=0; j<run; j++) {
+			mapData[ofs++] = ch;
+			chksum += ch;
+		}
+	}
+	console.log(mapData.length,ofs-1,chksum);
+	// de-dup it
+	var	prev = new Uint8Array(width*height),
+		religion;
+	for(i=0; i<years.length; i++)
+		for(y=0; y<height; y++)
+			for(x=0; x<width; x++) {
+				religion = mapData[i*width*height+y*width+x];
+				if(religion == dup)
+					mapData[i*width*height+y*width+x] = prev[y*width+x];
+				else
+					prev[y*width+x] = religion;
 			}
-			data[key+"_"+year] = religions[col].key; // interning
-		}
-	}
-	// build the data as a 2D-array per year
-	mapData = [];
-	for(var year in years) {
-		mapData[year] = [];
-		for(var y=0; y<height; y++) {
-			var row = [];
-			for(var x=0; x<width; x++)
-				row.push(data[""+(x+1)+"_"+(y+1)+"_"+year] || "None");
-			mapData[year].push(row);
-		}
-	}
 	// draw it
 	canvas.width = width*cellWidth;
 	canvas.height = height*cellHeight + barHeight;
 	draw();
-}
-
-function setReligions(data) {
-	var rows = data.split("\n");
-	for(var row in rows) {
-		var row = rows[row];
-		if(!row.trim()) break;
-		var 	cols = row.split("\t"),
-			religion = cols[0].trim(),
-			colour = cols[1].trim();
-		religions[religion] = {
-			key: religion,
-			colour: colour,
-		};
-	}
-	// load the map data
-	var doc = new XMLHttpRequest();
-	doc.open("GET","map_v4.tsv",true);
-	doc.overrideMimeType('text/plain; charset=x-user-defined');
-	doc.onreadystatechange = function() {
-		if (doc.readyState==4 && (!doc.status || doc.status==200))
-			setData(doc.response);
-	};
-	doc.send();
 }
 
 function init() {
@@ -291,11 +269,11 @@ function init() {
 	canvas.addEventListener('mousemove',info,false);
 	// load the colours
 	var doc = new XMLHttpRequest();
-	doc.open("GET","map_v4_religions.tsv",true);
+	doc.open("GET","map_v4_data.txt",true);
 	doc.overrideMimeType('text/plain; charset=x-user-defined');
 	doc.onreadystatechange = function() {
 		if (doc.readyState==4 && (!doc.status || doc.status==200))
-			setReligions(doc.response);
+			setData(doc.response);
 	};
 	doc.send();
 }
