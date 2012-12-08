@@ -1,5 +1,5 @@
 76
-0	Sea	#C0C0FF
+0	Sea	#A9E2F3
 1	None	#C0C0C0
 2	Unknown	#E6E6FF
 3	Polynesian mythology	#E6FF00
@@ -9,15 +9,15 @@
 7	American Animism	#FFD320
 8	Longhouse Religion	#000080
 9	Waashat Religion	#000080
-a	Norse Mythology	#808000
+a	Norse Mythology	#58FAAC
 b	Lutheranism	#99284C
 c	Dreamtime	#E6E64C
 d	Congregationalist	#B84747
 e	Mormonism	#EB613D
 f	Methodist	#FF3366
 g	Baptist	#B80047
-h	Russian Orthodox	#800080
-i	Mesoamerican Religion	#B3B300
+h	Russian Orthodox	#8904B1
+i	Mesoamerican Religion	#B18904
 j	Mayan Religion	#CCCC00
 k	Chavin Religion	#FFFF66
 l	Norte Chico	#E6FF00
@@ -29,7 +29,7 @@ q	Celtic polytheism	#FF9966
 r	Anglo-Saxon paganism	#FF6633
 s	Proto-Indo-European religion	#FFCC99
 t	Calvinist	#94476B
-u	Traditional African religion	#FFFF00
+u	Traditional African religion	#FAAC58
 v	Ancient Egyptian Religion	#4C1900
 w	Sunni Islam	#23FF23
 x	Early Christianity	#6B4794
@@ -47,7 +47,7 @@ I	Taoism	#FF950E
 J	Buddhism	#004A4A
 K	Eurasian Animism	#FFFF99
 L	Judaism	#FF00FF
-M	Mesopotamian mythology	#E6E64C
+M	Mesopotamian mythology	#04B4AE
 N	Hussite	#99284C
 O	Zwinglism	#FF3366
 P	Greek Orthodox	#800080
@@ -60,20 +60,20 @@ V	Shamanism	#FFFF99
 W	Minoan Religion	#33A3A3
 X	Mycenean Religion	#00DCFF
 Y	Myceanean-Greek Bridge	#47B8B8
-Z	Etruscan Mythology	#99CCFF
+Z	Etruscan Mythology	#58D3F7
 !	Shia Islam	#33CC66
 "	Gnosticism	#B84747
 #	Catharism	#EB613D
 $	Manichaeism	#B84747
 %	Taiping Christianity	#B80047
 &	Sikh	#280099
-'	Aladura Christianity	#B80047
-(	Mesopotamian Religion	#99CCFF
-)	Hittite Mythology	#0066CC
+'	Aladura Christianity	#FE2E2E
+(	Mesopotamian Religion	#8181F7
+)	Hittite Mythology	#084B8A
 *	Arabian Polytheism	#FFFF66
 +	Canaanite Religion	#CC6633
 ,	Proto-Indo-Iranian religion	#FF8080
--	South-East Asian Animism	#FFFF00
+-	South-East Asian Animism	#FACC2E
 .	Ryukyuan Religion	#D7DF01
 -4000	-3900	-3800	-3700	-3600	-3500	-3400	-3300	-3200	-3100	-3000	-2900	-2800	-2700	-2600	-2500	-2400	-2300	-2200	-2100	-2000	-1900	-1800	-1700	-1600	-1500	-1400	-1300	-1200	-1100	-1000	-950	-900	-850	-800	-750	-700	-650	-600	-550	-500	-450	-400	-350	-300	-250	-200	-150	-100	-50	0	50	100	150	200	250	300	350	400	450	500	550	600	650	700	750	800	850	900	950	1000	1050	1100	1150	1200	1250	1300	1350	1400	1450	1500	1550	1600	1650	1700	1750	1800	1850	1900	1950	2000
 80	70	/	:	;
