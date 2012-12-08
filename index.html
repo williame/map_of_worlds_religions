@@ -130,6 +130,7 @@ function fillRoundedRect(ctx,x,y,w,h,r) {
 
 function draw() {
 	var ctx = canvas.getContext("2d");
+	ctx.restore();
 	ctx.font = "bold 15px sans-serif";
 	ctx.fillStyle = "#ffffff";
 	ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -166,9 +167,16 @@ function draw() {
 				ctx.stroke();
 			}
 		}
+	// clip to tidy up arc abuse in opera
+	ctx.beginPath();
+	ctx.moveTo(0,height*cellHeight+barMargin);
+	ctx.lineTo(canvas.width,height*cellHeight+barMargin);
+	ctx.lineTo(canvas.width,canvas.height);
+	ctx.lineTo(0,canvas.height);
+	ctx.clip();
 	// year bar
 	ctx.fillStyle = "#ffffff";
-	ctx.fillRect(0,height*cellHeight,canvas.width,barHeight);
+	ctx.fillRect(0,height*cellHeight/2,canvas.width,barHeight);
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,barMargin*2+barHeight,height*cellHeight+barMargin,
 		canvas.width-barMargin*3-barHeight*3,
