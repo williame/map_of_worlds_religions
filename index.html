@@ -4,7 +4,7 @@
 
 var mapData, width = 0, height = 0, religions = [], years = [], sea;
 var cellWidth = 16, cellHeight = 8, barHeight = 30, barMargin = 3;
-var canvas, year = 0, running = false, activeReligion = null;
+var canvas, year = 0, running = false, activeReligion;
 
 var speed = 500, muted; // ms
 
@@ -148,7 +148,7 @@ function draw() {
 	for(var y=0; y<height; y++)
 		for(var x=0; x<width; x++) {
 			prevCol = cell;
-			prevRow = (ofs>=width? mapData[ofs-width]: null);
+			prevRow = (ofs>=width? mapData[ofs-width]: -1);
 			cell = mapData[ofs++];
 			ctx.fillStyle = religions[cell][2];
 			ctx.fillRect(x*cellWidth,y*cellHeight,cellWidth-0.25,cellHeight-0.25);
