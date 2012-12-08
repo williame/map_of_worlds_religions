@@ -130,8 +130,9 @@ function fillRoundedRect(ctx,x,y,w,h,r) {
 
 function draw() {
 	var ctx = canvas.getContext("2d");
-	ctx.restore();
 	ctx.font = "bold 15px sans-serif";
+	ctx.textAlign = "left";
+	ctx.textBaseline = "middle";
 	ctx.fillStyle = "#ffffff";
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	if(!years.length) {
@@ -167,7 +168,19 @@ function draw() {
 				ctx.stroke();
 			}
 		}
+	// year label
+	var label = years[year];
+	if(label < 0)
+		label = ""+Math.abs(label)+" BC";
+	else
+		label = ""+label+" AD";
+	var textWidth = ctx.measureText(label).width;
+	ctx.fillStyle = "#ffffff";
+	fillRoundedRect(ctx,25,height*cellHeight-50,textWidth+10,20,5);
+	ctx.fillStyle = "#000000";
+	ctx.fillText(label,30,height*cellHeight-40);
 	// clip to tidy up arc abuse in opera
+	ctx.save();
 	ctx.beginPath();
 	ctx.moveTo(0,height*cellHeight+barMargin);
 	ctx.lineTo(canvas.width,height*cellHeight+barMargin);
@@ -189,23 +202,14 @@ function draw() {
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,barMargin,height*cellHeight+barMargin,barHeight-barMargin,barHeight-barMargin*2,(barHeight-barMargin*2)/2);
 	ctx.fillStyle = "#ffffff";
-	ctx.fillText(running?"||":">",barHeight/3,canvas.height-barHeight/3);
+	ctx.fillText(running?"||":">",barHeight/3,canvas.height-barHeight/2);
 	// mute button
 	ctx.fillStyle = "#707070";
 	fillRoundedRect(ctx,canvas.width-barHeight*2+barMargin*2,height*cellHeight+barMargin,barHeight*2-barMargin*2,barHeight-barMargin*2,(barHeight-barMargin*2)/2);
 	ctx.fillStyle = muted? "#ff7070":"#ffffff";
-	ctx.fillText(muted?"audio":"mute",canvas.width-barHeight*2+barMargin*3,canvas.height-barHeight/3);	
-	// year label
-	var label = years[year];
-	if(label < 0)
-		label = ""+Math.abs(label)+" BC";
-	else
-		label = ""+label+" AD";
-	var textWidth = ctx.measureText(label).width;
-	ctx.fillStyle = "#ffffff";
-	ctx.fillRect(25,height*cellHeight-50,textWidth+10,25);
-	ctx.fillStyle = "#000000";
-	ctx.fillText(label,30,height*cellHeight-30);
+	ctx.fillText(muted?"audio":"mute",canvas.width-barHeight*2+barMargin*3,canvas.height-barHeight/2);
+	// unclip
+	ctx.restore();
 }
 
 function setData(data) {
@@ -312,5 +316,8 @@ Sorry, you need to enable Javascript to see this interactive map :(<br/>
 Sorry, you don't have a canvas to visualise on :(<br/>
 </canvas>
 <audio id="audio">Sorry, your browser doesn't seem to support audio :(</audio>
+<p>All the data is available as <a href="https://github.com/williame/map_of_worlds_religions">an animated spreadsheet</a>.
+You can also <a href="https://www.youtube.com/watch?v=mEIxdquRnJc">watch this on youtube</a>.<br/>
+There is a fun write-up about the technical challenges of publishing this map on <a href="http://williamedwardscoder.tumblr.com/post/37291851878/making-the-history-of-worlds-religions-map">williamedwardscoder.tumblr.com</a>.</p>
 </body>
 </html>
