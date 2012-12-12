@@ -53,18 +53,19 @@ for year in xrange(len(years)):
                 religion = dup
             else:
                 prev[y][x] = religion
+            assert ord(religion) >= LOWER, religion
             data += religion
 assert len(data) == len(years)*height*width
 print "map",len(data),hu(len(data))
-checksum = sum(ord(ch) for ch in data)
+checksum = sum(ord(ch)-LOWER for ch in data)
 print "checksum",checksum
-assert checksum == 55009555
+assert checksum == 38192755
 
 # now RLE it
 ofs, rle = 0, ""
 run_1, run_2, code = chr(code), chr(code+1), code+2
 MIN = 1 # fun fact: swapping out (code,code) for (code,rle-1) gives the next stage more to work on
-MAX = MIN+RANGE**2 
+MAX = MIN-1+RANGE**2
 while ofs < len(data):
     run = 0
     while ofs+run+1 < len(data) and run < MAX:
@@ -74,7 +75,7 @@ while ofs < len(data):
             break
     rle += data[ofs]
     if run >= MIN:
-        run -= MIN+1
+        run -= MIN
         if run < RANGE:
             rle += run_1
             rle += chr(LOWER+run)
@@ -83,10 +84,11 @@ while ofs < len(data):
             rle += chr(LOWER+(run//RANGE))
             rle += chr(LOWER+(run%RANGE))
         else:
-            sys,exit("bad run! "+run);
-        ofs += run+1+MIN+1
+            sys,exit("bad run! %s"%run);
+        ofs += run+1+MIN
     else:
         ofs += 1
+    assert rle.find(" ") == -1, (ofs,rle)
 print "rle",len(rle),hu(len(rle))
 
 # now compress substrings
@@ -179,12 +181,12 @@ while ofs < len(uncompressed):
     ofs += 1
     if ch == run_1:
         run = ord(uncompressed[ofs])-LOWER
-        run += MIN+1
+        run += MIN
         ofs += 1
     elif ch == run_2:
         run = (ord(uncompressed[ofs])-LOWER)*RANGE
         run += ord(uncompressed[ofs+1])-LOWER
-        run += MIN+1
+        run += MIN
         ofs += 2
     else:
         unrle += ch

@@ -1,80 +1,123 @@
 76
-0	Sea	#A9E2F3
-1	None	#C0C0C0
-2	Unknown	#E6E6FF
-3	Polynesian mythology	#E6FF00
-4	Christianity	#C0C0C0
-5	Anglican Protestant	#FF8080
-6	Roman Catholic	#9966CC
-7	American Animism	#FFD320
-8	Longhouse Religion	#000080
-9	Waashat Religion	#000080
-a	Norse Mythology	#58FAAC
-b	Lutheranism	#99284C
-c	Dreamtime	#E6E64C
-d	Congregationalist	#B84747
-e	Mormonism	#EB613D
-f	Methodist	#FF3366
-g	Baptist	#B80047
-h	Russian Orthodox	#8904B1
-i	Mesoamerican Religion	#B18904
-j	Mayan Religion	#CCCC00
-k	Chavin Religion	#FFFF66
-l	Norte Chico	#E6FF00
-m	Valdiva	#FFFF99
-n	Moche	#E6FF00
-o	Inca	#FF950E
-p	Eastern Christianity	#6B0094
-q	Celtic polytheism	#FF9966
-r	Anglo-Saxon paganism	#FF6633
-s	Proto-Indo-European religion	#FFCC99
-t	Calvinist	#94476B
-u	Traditional African religion	#FAAC58
-v	Ancient Egyptian Religion	#4C1900
-w	Sunni Islam	#23FF23
-x	Early Christianity	#6B4794
-y	Jainism	#198A8A
-z	Hinduism	#0047FF
-A	Arianism	#6B4794
-B	Roman Mythology	#0099FF
-C	Greek Mythology	#00B8FF
-D	Priscillianism	#5E11A6
-E	Noshinto	#B3B300
-F	Shinto	#94BD5E
-G	Celtic Christianity	#9999FF
-H	Chinese Folk Religion	#FFFF00
-I	Taoism	#FF950E
-J	Buddhism	#004A4A
-K	Eurasian Animism	#FFFF99
-L	Judaism	#FF00FF
-M	Mesopotamian mythology	#04B4AE
-N	Hussite	#99284C
-O	Zwinglism	#FF3366
-P	Greek Orthodox	#800080
-Q	Western Schism	#9999FF
-R	Anabaptist	#FF0000
-S	Zoroastrianism	#996633
-T	Zurvanism	#663300
-U	Tibetan Buddhism	#314004
-V	Shamanism	#FFFF99
-W	Minoan Religion	#33A3A3
-X	Mycenean Religion	#00DCFF
-Y	Myceanean-Greek Bridge	#47B8B8
-Z	Etruscan Mythology	#58D3F7
-!	Shia Islam	#33CC66
-"	Gnosticism	#B84747
-#	Catharism	#EB613D
-$	Manichaeism	#B84747
-%	Taiping Christianity	#B80047
-&	Sikh	#280099
-'	Aladura Christianity	#FE2E2E
-(	Mesopotamian Religion	#8181F7
-)	Hittite Mythology	#084B8A
-*	Arabian Polytheism	#FFFF66
-+	Canaanite Religion	#CC6633
-,	Proto-Indo-Iranian religion	#FF8080
--	South-East Asian Animism	#FACC2E
-.	Ryukyuan Religion	#D7DF01
+Sea	#A9E2F3
+None	#C0C0C0
+Unknown	#E6E6FF
+Polynesian mythology	#E6FF00
+Christianity	#C0C0C0
+Anglican Protestant	#FF8080
+Roman Catholic	#9966CC
+American Animism	#FFD320
+Longhouse Religion	#000080
+Waashat Religion	#000080
+Norse Mythology	#58FAAC
+Lutheranism	#99284C
+Dreamtime	#E6E64C
+Congregationalist	#B84747
+Mormonism	#EB613D
+Methodist	#FF3366
+Baptist	#B80047
+Russian Orthodox	#8904B1
+Mesoamerican Religion	#B18904
+Mayan Religion	#CCCC00
+Chavin Religion	#FFFF66
+Norte Chico	#E6FF00
+Valdiva	#FFFF99
+Moche	#E6FF00
+Inca	#FF950E
+Eastern Christianity	#6B0094
+Celtic polytheism	#FF9966
+Anglo-Saxon paganism	#FF6633
+Proto-Indo-European religion	#FFCC99
+Calvinist	#94476B
+Traditional African religion	#FAAC58
+Ancient Egyptian Religion	#4C1900
+Sunni Islam	#23FF23
+Early Christianity	#6B4794
+Jainism	#198A8A
+Hinduism	#0047FF
+Arianism	#6B4794
+Roman Mythology	#0099FF
+Greek Mythology	#00B8FF
+Priscillianism	#5E11A6
+Noshinto	#B3B300
+Shinto	#94BD5E
+Celtic Christianity	#9999FF
+Chinese Folk Religion	#FFFF00
+Taoism	#FF950E
+Buddhism	#004A4A
+Eurasian Animism	#FFFF99
+Judaism	#FF00FF
+Mesopotamian mythology	#04B4AE
+Hussite	#99284C
+Zwinglism	#FF3366
+Greek Orthodox	#800080
+Western Schism	#9999FF
+Anabaptist	#FF0000
+Zoroastrianism	#996633
+Zurvanism	#663300
+Tibetan Buddhism	#314004
+Shamanism	#FFFF99
+Minoan Religion	#33A3A3
+Mycenean Religion	#00DCFF
+Myceanean-Greek Bridge	#47B8B8
+Etruscan Mythology	#58D3F7
+Shia Islam	#33CC66
+Gnosticism	#B84747
+Catharism	#EB613D
+Manichaeism	#B84747
+Taiping Christianity	#B80047
+Sikh	#280099
+Aladura Christianity	#FE2E2E
+Mesopotamian Religion	#8181F7
+Hittite Mythology	#084B8A
+Arabian Polytheism	#FFFF66
+Canaanite Religion	#CC6633
+Proto-Indo-Iranian religion	#FF8080
+South-East Asian Animism	#FACC2E
+Ryukyuan Religion	#D7DF01
 -4000	-3900	-3800	-3700	-3600	-3500	-3400	-3300	-3200	-3100	-3000	-2900	-2800	-2700	-2600	-2500	-2400	-2300	-2200	-2100	-2000	-1900	-1800	-1700	-1600	-1500	-1400	-1300	-1200	-1100	-1000	-950	-900	-850	-800	-750	-700	-650	-600	-550	-500	-450	-400	-350	-300	-250	-200	-150	-100	-50	0	50	100	150	200	250	300	350	400	450	500	550	600	650	700	750	800	850	900	950	1000	1050	1100	1150	1200	1250	1300	1350	1400	1450	1500	1550	1600	1650	1700	1750	1800	1850	1900	1950	2000
-80	70	/	:	;
-0:Q771:D0:E1110;A@777071:E0:TV:Q0:\770071:E0:K110:C11V0V:Z0:N711071170071:C0:Ks1:E01V:c0:H70:G71:C0:Js1:Css111V:a0:L7:C0:C11100110:Gs1110s:DV:_0:E7770007:F070001100110:Fss1s00s:DV:`0:D77707:F0001100110:Ksss00s:DV:[0VV0V0:C7:K00070:Qss00s:EV:X0:EV0:C7:K0070:Qss000s:FV:Y0:CV0:D7:I0:C770:Js0:Css000s:HV:W0:CV0:D7:H0007:C0:Jss0:Cs:LV:W0:I7:H0007770:Ks:SV:V0:J7:H07:C0:Js0ss0s:OV:V0:J7:L0770:Hsss0s:QV:S000E0:H7:L070:Js0s:SV:MHHHVVV000E0:G7:G07:C0:Ns:K0s0s:E0V:JH:DVV000E0:G7:G007770:Os:I0:Ds:HV:FH:EV000E0:H7:H0770:Ps:I0:Dss0s:HVVVH:G000E0:H7:J0:Qs:I0s:E00s:IH:D0H:C0E0:I7:K0:Pss000s0s:J0s:IH:D0:CH0E0:I7:J0:Os:C0s0ss0s:G,,0s:IH:E0:P7:I0:Os:C0s00s0s:G,:Ds:HH:E0:O7:I0:Os:C0:Cs0:Dss(s,:Es:GH:E0:C.0:J7:I0:Osss00s0ss0s0s0ss((,:Es:GH:E0:O7:H0:Pu0:Es0:E***((,:Ds:GH:E00H0:L7:H0:Puuu00u0:G*:C(,:Es:FH:D0H0H0:M7:G0:Ou:G0:F*:C00,:Dsssyy--H:D0:R7:C0070:Ou:H00u:C*:D0,:Cz:Cyy--HHH--0:C-0:M77700070:Nu:O*:E0,,,z:Cyy-:F0:C-0:M7770:Qu:P*0*:C000z:F-:G000-0:N7700770:Mu:Q0*:C0:Cz:E-:H000-0:M7:C00770:Ku:R0**0:Dz:E00-:F000-0:M7770007070:Ju:R0*0:Fz:C0:D--0--000-0:N770:E70:Iu:S0:Gz:C0:D--0:E--0:M770:Pu:S0:Gz:C0:E-0:D-0-0:M770:Pu:S0:Gz:C0:F-0:U7707:C0:Ju:S0:Hzz0:G-000-0:Q7:G0:Ju:Q0:Izz0:G-00---0:P7:G0:Ku:P0:Iz0-0:E--00--0:Q7:I0:Ku:N0:K-0:F--0---0---0:C10:G7:I0:Ou:J0:T--000-:D0:K7:J0:Nu:J0:U---00-0003010:H7:J0:Ou:H0:k7:K0:Nu:H0:Zc000c0:K7:K0:Ou:G0:Ycc00cc0:L7:J0:Ou:G0:Yc:E0:M7:I0:Ou:G0:Xc:F0:M7:I0:Ou:G0:Xc:G0:M7:H0:Ou:G0:Wc:H0:M7:G0:Qu:E0:Xc:H0:M7:G0:Qu:E0010:Uc:H0:N7:F0:Qu:E0110:Uc:H0:N7:F0:Qu:E0110:Uc00c:D0:P7:E0:Qu:D0010:Yc:D00010:L7:E0:Qu:D0010:[ccc00010:L7:D0:Su:C0010:a10:L7:D0:Suuu0:`c00010:M7:D0:Suuu0:`c00010:M7:D0:Tu0:d10:O7:C0;AQ7770;AR7770;AR7770;AS770;AS770;AS770;AT70;AU70110;BV/;z@/;z@/;z@/;z@/;z@/;z@/;z@/;dlm/;ATm/;AJ3/:Hm/;z@/;z@/;z@/;z@/;z@/;z@/;Qwvv/;ATv/;z@/;z@/;Axll/;ATl/;z@/;z@/;z@/;z@/;[jW/;z@/;gw+/;AT+/;AT+/;z@/;z@/;z@/;z@/;z@/;z@/;dqz/;ATzzz/;ARz/;ATz/;z@/;cjz/;ATz/;ATz/;z@/;_cz/;ATz/;ASzz/;ASz/;ATz/;ATz/;z@/;\fX/;z@/;cn):D/;AO):E/;AP):C/;AS)/;Kki/;xya/;ASa/;ATa/;ASaa/a/;ARaaa/;ASaa/;ARaa/;ASaa/;ATa/;ht7/;AT7/;AT7/;Bj77/;AT7/;z@/;z@/;z@/;Kw3/;z@/;N\(/;AMX/;AZ(/;z@/;z@/;z@/;PM+/;DFL/;z@/;^Ls:D/;AOs:E/;APs:C/;ASs/;FMii/;ARii/;ASii/;ASii/;yFss/;APsss/s/;ARsss/;[X+/+//+/;AQ+/;AR+/;AT++/;FUj/jj/;AQjjj/;ASjj/;z@/;V\Y/;BjY/;DJL/;z@/;_c(:C/;AR(/;AS((/;AS((/;AS(/;Yakk/;ATkk/;ATk/;ATk/;z@/;CC+/;Hgzz/;ASzz/;ASzz/;ASzz/;z@/;VyC/;ASC/;ATC/;BjC/;Hdz/;ATz/;ATz/;z@/;VtZ/;z@/;^Lqqq/;DIC/;ATC/;APZ//C/C/;ASC/;AQZ//CCC/;z@/;\qC//C/;APC/C/;AQC/:DC/;B\CCC/:FC:C/;AGC/;ATC/:J(((/;BaC/;ASCC///C/;AOC/;Bq(/;z@/;\xS/;HXz/;AOzzJzzz/;E^z/;ATz/;z@/;Uks/;ADC/;GAL/;ATL/;z@/;PKq/;ASq:C/;APq/qq/;AQqqq/:Dq:D/;AIq/:Dq///qq/;ANq:E/;ANq:E/;APq:D/;DCZ/B/;K]z/;AUz/;AUz/;APz///z/;APzz/zz/;APzz/;ATz/;AUz/;ATz/;ATz/;ALz/:Ezz/;ALz/:Fzz/;ATzz/;ATzzz/;z@/;GbB/;BkB/;DQSS/;ASSS/;z@/;Rtqq/;ASq:H/;AKq:C/:Dq/;AJq:C/:Eq/;AJqqq/:Eqq/;AKq/:Eqq/;ALqq/;ASqqq/;ARqq/;AdS/;ASS:C/;AQS:C/;APS:E/;AOSS//SS/;APS//SS/;ARSS/;ASSS/;ATS/;z@/;z@/;Jk-/;AS--/;AS--/;AS-/;AT-/;AT-/;guq/;ATq/;ASq/;ARqq/;AQq//q/:FS/;AIq/:Dqq///SS/;AAqqq/:Dq/:GSS/;ABqqq/:MS/;ACqq/;z@/;aEB/;ATB/;AUB/;BjB/;AM++/:C+/;AT+/;Bf++/:PJ:E/;AOJ:G/;AMJ:H/;AMJ:G/;ANJ:F/;ANJ:E/;APJ:C/;AQJ:C/;AQJ:C/;AQJJ/;z@/;QXB/;AR+++/;AR+++/;AYB/;ASB/;Enyy/;ASy:D/;AQy:C/J/;AOy:C/;APy:C/;AQy:C/;ARyyy/;ASJy/;ARJJ/;ASJJ/;ASJ/J/;ATJ/;z@/;T[z:E/;AOz:G/;AMz:H/;AMz:G/;ANz:F/;ANz:E/;APz:C/;AQz:C/;AQz:C/;AQzz/J/;K_77/;AT77/;AT7/;AT7/;z@/;z@/;eXB:C/;AQB/;E^B/;BjB/;AUB/;AUB/;AUBB/;z@/;ZVJ:H/;AKJ:I/;AJJJJ/;APJ:C/;ARJJ/;ASJJ/;ASJJ/;z@/;\wJ:E/;ATJ/;AGJ/:KJ/;AGJ/:IJJJ/;z@/;nWx/;Vpn/;z@/;Ag6/;A^66/;AR66/;AN6///666/;AH6/:H6:D/;AS66/;AO6/6/6/;AT6/;AK6/:G6/;AT6/;AR6v/;AT6/;z@/;PO6/;AS6/6/;AR66/:K6/;AG6/:I6/;AH66/:C6/:G6/;AG6//6/6/;AM666/6:C/:D66/;AF66///6/666//666/;AD666/:D6/6///666/:HS/S/S/S/S/J/:l66/:C6/6/:D6/:GS/:IJJ/:i6:C/:C6/:F6x/:ES/:HJ:C/:i666//6/66/:Fx/:ES/:IJJJ/:q6/:Gx/;AE66/;AU66/6/;AU6//66/x/;AO66/;z@/;Mdr:C/;APr:E/;Fo6/;AU6/;A^T/;ATTT/;AF6/:JTTT/:EJ/J/J/J/J/:q6/:JT:D///J/;AMT:C//J/:JS/;AAT:EJ/:KS/;AAT:E/;APT:D/;ARTT/;ASTT/;ATT/;z@/;ZBx/;AE6/;CNJ/;ATJ///J/;APJ:D/;ARJJ/;z@/;QSA/;AUA/;AUA/;AM6/:EA:C/;AH6//6/:EAAA//P/;AE66/66/:DAA/A/;AJ666/:IP/;AE6//66/:IPP/;AG6/:C6P/P:E/;AMP:F/;ANP:E/;ADxD/:GP:C/PP/;ARPPP/;ARPP/;AE6/:LPP/;AE6/:LP/;AE66/:LP/;APP:E/;AOP:E/;APP:C/;ASxx/x/;AQxxx/;ASxx/;z@/;HB6/;APr/:C6/;AIG/:Er:D6/;AHGG/:I6:C/;AFG/:J666/;AR66/6/;AQ6/:TJ:D/:t6/:SJ:G/:jD/:`J:C/:iD/:cJ/:fD:C/;AQD6DD/;F@JJ///J/;APJJJ/;ATJ/;BfJ/;ATJJ/;ASJJJ/;ATJJ/;ASJJ/;ATJ/;AUJ/;ATJ/;ATJ/;z@/:er/;ASr:C/;ASr/;ASr/;E`AA/;ARAAA/;ARA/;AQ66AA/A/;AO6AAA/A/;AOA:C/;AQAAA//A/A/;ATA/;ARA/;ARA:C/;ASAAA/;AUA/;z@/;PuJJ/;ASJJJ/;AQJ:C/;APJ:F/;ARJJ/;DpA/;ArJJ/;ATJ/:s6/6/:WJ/:u6/:WJ/:s6/:XJJ/:q6:C/:UJJJ/J/:r666/:UJJ//JJ/:s6/:TJJJ//JJ/;ANJJ/J/JJJ/;AMJ///J//JJ/;AQJ:C/;ASJJ/;HKJJ/;ATJJ/;ATJJ/;ATJJJ/;z@/;DDJ/;ATJ/;ASJ/;ATJ/:ip/;ATp/;z@/;Uq6/;Bm6/;HP66/;AR666/;AR6/;AR666/;AR666/;AQ6:C/:ZJ/:o666/;AnJJ/;ASJJ/;z@/;QQ6/;AWr/;AP6/;AT66/;AT6/;DYw/;ATw/;ASw/w/;AQw:C/w/;ANw:G/:CJ:C/;ADw:H///J:D/;ABw/w:H//J:F/;ACw:H//JJJ//JJ/:tw/:Gw:G///JJJ//J/:vw/:Fw:C//ww/;AFw//w:H/ww/;AGw:K/w/;AKwww/w:C/;ANww/w:C/;ARww/;ASw/;z@/;Gr6/;AS6:D/;AQ66//6/;AP6/:iJ/;AUJ/;ATJ/;Ciw/;ATwww/:ww/:Tww/:ww:C/:Rwww/:uw:C/:Rwww/:uwww/:Sww/:vw/:Uww/:vwww/:Rwww/:uw:F/:Owww/:uww/ww/ww/:Nww/:uw/:Ewww/:Mww/;ACww/;Brw/;HfJ/;AUJ/;yR66/6/;AO6:D/6/;AO6:D/;Bf6/;AU6/;Fq6/;GLw/;ATw/;ASw/;ATw/;z@/;Id$$$/;AP$:F/;AM$:J/;AJ$:L/;AH$:M/;AG$:N/:k666/:Q$:M/:m66/:R$:F/:t66/:Q$:E/;AHw:C/:C$:C/:rw/:Ow:D/:yw/:Qwww/:yw/:Sw/:v6//w/:Sww/;AVU:C/;APU:D/;AOU:F/:o!/:WU:F/:o!!/:WU:D/:o!!/;AS!!w//w/;AOww/;AQwww/:Gw:C/;AFw/:Lww/;ATwww/;AUw/;ATww/;ATw/;ATw/;qZa/;ATa/;ASaa/;ASaaa/;AH6/:Ha/:Caa/;ARaaa/;ARa:C/:OVVV/:yaaa/:MV:F/:waa/:MV:J/:qa//aa/:MV:L/:raa/:MV:M/:raa/:LV:N/;AFV:M/;AHV:F/;ANV:E/;APV:C/:r6/;AT6/;AT6/;AT6/;S\w/;ATw/;ATw/;JV7/;icaa/;ASaa/;VJ6/;z@/;]Kw:C/;AQw:C/;ARw:D/;AQw:D/;APw:D/;AQw/;AL!/;AS!!!/;AR!:C/;AQ!:D/;AP!:D/;AA!//!/:G!///!:C/;A@!:E/:F!/:D!!/;A@!:F//!:E/:C!/:x!:Q/;AD!:O/!/;AD!!//!:C/:D!!/!/;AQ!/;z@/;ANhh/;AQh:D/;AOh:E/;AOh:E/;APh:D/;APh:C/;AQhhh/;ARhhh/;ARhhh/:va/:Th:C/;ARhhh/;AQhhh/h/;AQh/;HS!/;AK!/:G!/;AK!/;GHS/;Cuxx/;ASxxx/;ARxxx/;ASxx/;ATx/w/;ASw/;ATw/;ATw/;ATw/;ATw/;ASw/;ATw/;ATw/;ATw/;ATw/;ATw/;ATw/;ASw/;^K6/;AS66/;AR666/;AH66/:G6:C/;AG66/:F6:C/;AD66/:K666/;AS66/;AR66/;AS66/;AT6/;Co7/;KQ6/;z@/;Jw6/;AT6/;AT6/;Id6/;DG66/;AS666/;AS6/;AT6h/;AShhh/;AShh/ww/w/;AOhw:D/:Gw/;AFw:D/;APwww/;AWww/;AJ6/:Gww/;AJ6/;z@/;VKw:E/;AMw:H/;ALw:C/:Cww/;AKwww/:Dww/;Cg#/;DC666/;AT66/;z@/;gDJ/;ATJ/:jw/;ATwww//w/:Gw/;AEw:G/:Fw/;AEw:H//w:E/;ACw:Q/;ADw:O/w/;ADww//w:C/:Dww/w/;AQw/;yo6:C/;AR666/;AR6/;Qn6/;KWww/;ASw:C/;AQw:D/;AMw/:Dww/:nww/:Gw/:Sww/:mw:D///w:C/;AKwww///ww/;ANw/:Dw/;unh:C/;AShhh/;ARhh/;EZ6/;AT6/;OR!/;AU!!/:y66/:R!/:y6/6/:R!/;AT!/;E_w/;ASw:D/:tww/:Dww/:Lw:D/:twww/:Cwww/:Lw:C/:oww///www//w:G/;ACwww/w:D/w:F/;ADw:J/w:C/;AEw:I/:Dw/;AFww//ww/;PIo/;HB3/;AT3/;AT3/;AS3/;AT3/;AS3/;\EQ/;ATQ/;AXQ/;ATQ/;ASQQQ/;AQQ:C/;AQQ:C/;ARQ:C/;AQQ:C/;AQQ:C/;ARQ/;AQQ:C/;ARQQQ/:CQ/;AMQQQ/;ARQQ//Q/Q//Q/;AQQ/;Iuw/:Cw/;APw:C/;AQw:C/:Lw/;ACw:C/;ARwww/:ow/:Eww/:Sww/:qwww///ww/:Sww/;z@/;EDNN/;ASNN/;ATN/;\Aw/;ATw///w/;APw//w/;yL6/;AT6/;AX6/;AT6/;AS666///66/;AL6:C///66/;AL6:C/:C6/;AM6:C/;AQ6:C/;AQ6:C/;AR6/;AQ6:C/;AR666/:C6/:Dw/;AG666/;AR66//6/6//6/;AQ6/;NTw/;Lhoo/;AToo/;ATo/;AToo/;Bjo/;eT77/;JAww/;ARw:C/;ARw/ww/:m66/:^w/:m6/:_w/;ARw/w/;ALw/;Kq6/;AT6/;AT6//66/;AQ66//66/;AO6///6/6/;AN6/:E6/;AM6/;Bk6/6:C/;AT66/;AT6/;AT666/;AT6/;AKo/;ATo/;AToo/;HQo/:D6/;AMoo/;AToo/;ASoo/;ATo/;ATo/;ATo/;ATo/;ATo/;ATo/;RPbb/;ARbbb/;AQb:E/;AEbb/:Gb:C/b/;AEbb/:Fb:C//b/;AObbb/;ASbb/;ARbb/;ASbb/;AO5/:Cbbb/;AL5:C//bbb/;AM55//Rbbb/;AM5/:Dbbb/;ATbt/;AMt///OOOb/:u55/:RtO/bb/:u5/:Rt///b/;Av6/:ftt/:e6/;FpJ/;ATJ/;Ad666/;AR66/;AS66/;AT6/;M\6/;Bi6/;Ag66/;AS666/;AS66/;AT6/;AT6/;Ik66/;AS6/;aOt/;ATt/;Bo6/:ZUU/;ASUU/;BK6/:Jh/;DbJ/:f66/:eJ/;DU66/;AR6:C/;AP6:D/;AP6:E/6/;AQ6//6/:y6/:S6/:y6/;AT6/;AU6/:M66/;AD6/:M66/;AD6/:N6/;AE6/:M6/;AE6/:M66/;AT6/;AT6:E/;AO6:D/:rww/:U6:C/:tww/:T6:C///66/:pww///t/:O6:C/:C666/:oww/:R6:C/:C666/;AL666/:D66/;AL66/:D66/;AL66/:D66/;AL666/:C66/;AL666///666/;AL6:C/6:C/;AL6:F/;AN6:G/;AN6:F/;AN6:F/;AO6:E/;AO6:C/;AQ6//6/;AU6/;YNhh/;ATh/;AThh/;AShh/;AShh/;ARh:C/;APh:D/;APhhh/h:C/:k66/:J5/:Mh:G/:IU/:^666/66/:Xh:D/:JUU//UU/:Z666/:Zh:E/:IU:E/:[666/:^hh/:IU:D/:\6/:ahh/:HU:C/:]bd/:`h/:JUU/;D^6//6/;AQ6:D/;AO666//66/;AN66/:C6/;A@I/:L6/:D6/;A@I/;Pv66/;AR666/:vt/t/:R666/:xt/:R6:C/:wt/:R6:C/;AR6:D/;AP6:D/;AP6:D/;AQ6:C/;AQ666/;AS6/;Ic66/;AR6:C/;AQ6:D/;AP6:D/;AQ6:C/;AQ666/;AR666/;AR666/;AS66/;AS66/;AS66/;AT6/;AU6/;Hgh:D/;AShh/;AShh/;ATh:C/:h5/:ah:C/:g55/:ah:C/:f55/:chhh/:Sh/:Q5///5/:`h/:Shhh/:Q5///5/:^h/:Uhhh/:Q55/5/:vhhh/:Q555/:C55/:qh/:N6:C/:G5/:rhh/:M6:C/;AAhh/:N6:D/:yh/:Q6:C/;AQ6:D5/;AO6:D55/;AN6:D5/;AP6:C5/;AQ6665/;AR655/;AR65/:xJ/:S66/:xJ/:S6/;Gezz/;ARzzz/;ARzz/;tHhhh/h/;AQh:E/;AThh/:Zh/:qh:F/;ANh:G/:Ohh/:Ybb/:\h:F///h/h///h/hhh/hh/h/:uh:G/:Hhh/:Eh/:Ch/:ph:T/:Ch/:Dh/:oh:S/:Dh/:Dh/:mh:S/;ACh:Q/;AIh:C///h:D/;AJhh/:Ehhh/;ATh/;PRzz/;ATzzz/;AOz:E/;AOz:D/;APz:D/;APzz//z/;ATz/;ATz/;AQzz/;ATz/;ATzz/;ASzz/;ASz/;ty5/:C5/;AN5/:C5/;AN5/:E55/;AL5/:D555/;AL5/:D55/;AM5/:C5/;AO5/;AT5:C/;AQ55/5/;Os&/;AT&/;`D5/;AT5/;AS5/;AT5/;AT5/;Pv66/;TT5/;AT5/;AT55/;AS55/;AS666//bb/:C66/;AH6:D/:D66/;AI666ee/:D6/;AJff6ee//g/gg/;AL6///g:D/;AM6/g:E/:s%%/:Sg:E/:s%%/:Tg:D/:s%/:Vggg/;ARggg/;ARg/;Pr6/;BLd/;LR55/;AT5/;Cx5/;AX5/:E5/;AN5/:D5/;AT5/;AO5///5/;AP5///5/;AS5/;KV55/;Bubbb/;A@555/;AQ55/;AN5///5//5/;AN5/;AV5:C/;AN5:F/5/;AJ5:F/;AIb///5:E/;AK66g/5:D/;AM6g/6:C/;AN66/6:C/:G6/;AF5556:D/:D6/;AH5566566/;AN5:D///65///6/:vF/:J5:C6/66/;ABF/:J555///6//5/:yF/;ASF/;ATF/;ASF/:I66/;AHF/:I66/ee/;AQ6//e/:yJJ/:O6/;ABJJ/;ASJ/;Nf6/;AS66/;AL66/:C6/6/;AM666//5/6/:C555/;ADb/665665///6/6555/;AF6655656//6:C55/;AJ6:C/6:D/;AK666///6:C/:_5/f/:c66/:C56/;AO6///56/:[5///5/:h665556/:Z55//55/:gd665556/:Z5:E/:gd665556/:Y5:F/:g6665556/:Y5:G/:fbbb5556/:X5:F/:ibb555/:Y5:G/:hbb5556/:X5:G/:hbb5556/:X5:G/:hbb55/5/:[5:C/:ibb/tt/:\5/55/:ibb//t/:_5/:j5//t/;AQ5/;ATt55/;ASt/;SNbb/;_mL/;ATL/:Nzz/;AMz/z///zz/;BbS/:Dz/;ATz/;ATz/;Bhz/;ATzz/;ASzz/:yb//5/66/;ANb//666/;AJ'/:Cbbb/6/;AQb6/:a66/:j6/:a666/:h666/;AR6:C/;AOgg/666/;APf/;KEg/;ARg/;ATg6/;ASgg/;ASgg/;z@/;I^66/;nJ
+80	70
+w,"pw,"wR"tw-"wEZw,"wVZw3-n$w$$wDZtw0-n+w!kw=@$!Ztw--t!-n*w"ktw!7ZOw0-n)w#ktw6Itw&@$w1-n(w"kpw#ktw.Itw!Iw%@$w1-n*w!kw%kOw&!2w!Itw+@$w2-n'w#k!kw!kw#kpw-@$!@%w2-n%w#k!kOw)Ltw#Ltw!Zt!@$!@%w1-n$w%k!kpw1Lt@/w<ktw&kpw#Lw%LO@-w=ktw%kOw#LOw!Ln$@,w>kn$w"kn$Ln&w!LO@,w?kw"kn'Ln,@,wDkn%Ln,@-wFkOLn+@/wEkOLn*@0wFkn$=n$Lp@1wFkn$=n'@1wEDpCp=n'@1w=ktw!Dn&Cp=n(@0w?Dn*=n)@0w>Dn+=n)@0wADn(=n*@/wEDn$jt=n(@/wGDjn&=n%@/wHjn'=n$!@.wHjn'=n%@.wIjn&w"=O@-wFhpw!jn%=w!=O@,wEhn$!ftjO=n(@*wDhn'ft=n-@(w0"pw,?Ow!hn&ft=Ow!=n&@(w-"n$w(?n*w!hn$=n%w"=n&@%w6?n2hn%=n%w!=n(@%w1?n9w$=Ow"=n*"pw.?n<w"=!=pw"=n+"!"w,?n>w$=n1"tw,?n?w"=!=n2"w-?n=w'=n0"w0?n:w#=O!=n(w%"tw6?n5w!=tw!=n*w$"Ow:?n1w&=n(w!=p"Ow<?n0!=!=t!=n,"p=w??n-w&=n'!=t!=Ow""w<?n-w"=n+w$=w$"w<?n.!=n*!=w*"w<?n.!=Ow#=t!=twI?n.=Ow%=OwH?n,w*=t!=pwH?n)w-=twL?n'!!)"i"tw#"w^"tw""twb"pw`"n$!"w["n'!"w1(n%wC"n&(w-(n-wC"n$(!(w&(n4w!3(w((t"(w"(n;w7(tw!(tw!"w#(w$(n<w"(w3(O!("(w#(w&(n:w"(w.(n&!(w$(!(w*(n6w#(w*(!(n'w#(t!"(tw0(n0w"(tw&(n+w%(t!"(w3(n.w$(!(n*w!(pw#(n$!(w7(n*w%(w"(n)w!(pw!(n%w;(n)w#(w#(n5w!"w:(n-w"(n6!("wC(n>w!(wF(n:w!0(n7wP(n3wR(n4wU(n/w^(n&wa(tw'!<yyrkb$rX"7p!<yyrP#!7ud!7r!1m6ud6!<!2T[r\`ip!<yyra!$D8DsbDOr`ZDpr_!+Dz_DOrhU\rZD!5ub!5za!5vb!5zb!5zc!5r;U3rJ-+z_+q"+s]+tm+vb+r2W(ud(m(prf!1$ryys#fsbfr%_\!<BYPs!ir]R=ub=za=vb=zb=zc=r:!23sa3va3prCm=zb=m=sb=u!4is3=8=r";iuai8itmir4Q4sb4zb4ud4xB!2Pr$.]m]rZCf8fsafv`fpmfr:Y5zd5ud5r7.DvaDOr4_irJQDpr1VGs`GmGxb7^r[/G8GmGsbGtmGubGr"!4^s%;s_^s#;8;rW0fs"Gs`fmGs"Gs^fmGs\fs&Gs!GsaGs"Gs[Gs&GscGr#7GubGx"VG8GsbGprH.Dx"UDucD8D8N8D8Dr$!1Wr_!.=r&DPx(*GrD,D8D8Du&DzZDu%Ds!DsZDq%DsZDs"DzcDpr%VDx/D;ub;z`;pm;s]Fs!;pm;s`;pm;s]^s!;va;zc;si;sc;ub;v`;tm;sb;xNHWucWx)[FsfFrT#Wz_Wno^Wu!WzbWv_WqaWx%f;v`;u!;s`;s";8;8;8;sc;u^;s";v\;pm;q\;nMb;xS\kz_kn$r]*WscWzaWx#?;8;sh;ub;sb;ud;sa;se;x$n;ub;zb;prH1NzaNq]Nno]N!>[N!F[N!F_NKaNvbNpr,#FmFs`iu"Fx#6i8is!5i8irH4Nr"PCzZNu!CnM\NpCK[NpmCnM_Cu!Cx.DFscFr$-itFsbiucixH!1DzaDq\NDno]D!>[D!F[D!F_DKaDvbDpr!7!1(zd(ud(!<.CF8FseFseFs&Fs]FmFs#F8FscFxGL!8uc!8uc!8uc!8ubNzaNz_Nq`NvdNrU]Nva!Ksa!K8N8N8Nr'5Nxf!.Br;!4!3rCjl_'K!oZ'!7s$'v[o"'m'zbla'r#A'r"L'r"Y'r"!0'rCSNubNva!8tmW!9W!9W!9W!9WscWscWscWr%_Bs$o\Bt'q"o^'zbl"oXB!9o&o\o$'z[o''zYo#'Om'moYo!l"'z[o&o_oao&l"oWo"'tm'tm'pmoW'm'n%m'mlX'm'tmoa'tm'rCQWx"SN!9N!9N!9N!9NscNscNscNsbXz_Xno^XnM`XnM^Xno^XtmXx&T<8<u]o$<u^o#<uc<uYl'<rFTNub!8udN8Npr,hBr,d'rT+TubTvVBs&Tq"TsRBu!Tu!TnMVBpTn'mTz!EsTBtTz$Tv"EuTTz$Tz"EzTTz$Tv!EzUTu$Ts!o#EueEseEr"Jlb'vc'zeo`'mo^Hs$lX'z!Bs_'r?aNudNu\Ns%!8z!4Nz&Nu'NuRNz$Ns'NuSNz#Nu&NuUNu#Ns&NuUNz*Nr/.oelb'z`'qdld<oc<mob<8<8<se<sZHvaHuc'HscHuj!/ud!/xW!2EseEs!Eu`EucEpmEmEtmEu[Es&Eu[Es"Eq_Ev'<sXEpo&<uXEtl%<m<uc<r?<Ns!3NsJNs7NuJNu&Nz,NvINu%Nv,NvINu%NmNu+NvJNs%NmNz*NuT!Ks*NsV!Ksb!Kq\Nq"Ns[NqdNr1Joeo!l`lc'pmoa!H"WEr>!.NuaNx>$:x!/FNr"N!8x3,lcl_'q_'v'oX'val!+'rFRNubNqbNzbNz`Nq`NvaNpr#=Av]A!>]AnM[Az!AnMXAn$mAn%mgUAn-sYAn*s\Ano[A!>\AvbAz"As_gcgcA8AseAseAseAr#L<r#;l!oa'x;]NueNr#%NseNr,.g_AK]A!F[Av#gdAx%QAr':gcAzcAzdAs,oUg"g(oTApmAz(oUAtmAz'lTAno%'vSg-oSArJ]gaAx,/oc'moblc'z_o!'zZo$'mld'rCSbscbzbbvabvabq`bq`bq_bnM]bnoTYu%b!:!:!:!>SYq$bnoSYv'bqUYu!A8Avc!6zcgcAx#!+AzdgeA8A8gdgdA8A8As,od'zcldoVAskAOr"GAm_saA_v"o[At_uaAscAx>!3ZscZzbZvaZvaZq`Zq`Zq_@M]@o\@)s[@)s[@)s[@(s]@o_@$r)=Apr#T+s"+u_+no^+nMb+x"!0+s$+8+v`+pr"!7'Or'D'r-+(r!09'r'H+uc+xD3gc!6zaAK`Aq!?x"E_v`_Ka_q`_K`_v[_ue_ua_K^_qb_zb_zb_zb_uc_ub_va_q`_K__qa_va_q__q`_zc_ud_rL4Wr&DAs+_uQAqYAnM$Bv02s%2v!3As,Bv02u"2KFBz/2n+sX2n+sZ2m2!>b2x"?_x0#+rQ%oa'nMPo)'!>]'tm'vb'r'!3lc'x#<!H"J(rBaAr'4gcg!gbgcAzaAva!6t2zc2pmoa2'vclYl+o%'pr!44gcAzdgcgcgcgbAzaAva!6pr-Io"as`ld!HCRNx0WgegaAK^Aqb!6zbAzbgcgbAvaAq`AK_AqaAvaAq_AK_AnM_AvbArF_!6vcgc!6pr#;Ar*^lclb'zHg9oHAs!?x"^'r"Cg!?zcgcAr5!*$z`$ub$r1!!6zb!6vbAx"V_ue_ud_se_r$eAscgaAv;2sEAv92zDAq!32zDAq3l$2sEg<2sDAzagc!6q_AnM^AnM%oXAz)oWg)lVAvaAqaAOr,U9r0nAr+4As`Av_AK_AKbAzeAr,'Ur"SUsaUx"Cg+Us#Uz!4g0UK[Un+sXUOmUKZUv#Uu!0As/UsSAs9UuHAseAr>'AscAr#>Apr6GRzcRxE_Ar6!7Ar$)o!2'z\o%lY'x"Qo#'zb'K['n+sX'Om'KZ'v#l^on'x-!.9m989zd9ud9rB;Avdg`As"g!?r$&Ar/9(8(s9omldod'z"o`l"o.o:9no-o#o,l!79v+o"lQ9s,o$odoW9s%o#oX9z%'ve'pr-[l!4obo.Nx9H,t>s',zV,tS,u(,sXSm,v$,vUStm,v!,nMU>s",n*sU>s#Vs!,tm,vT>s,,sV>s">s"Mc&ub&vc&r$1,uc,x$?oc'x#dMc&x"!1'vc'zcl!*oa'vb'pr++l]>s&'z)NuY'pr"CA8gdgdgdAr"jYucYx/)2r(no]odo"'r#C>x'W'KZ'Om'noUo!'nM#lV'no$'zV'K'oV'nM]'!F'oU'!F#lW'n-s''zS'nM_'K)oT'no&'vY'q#'v[l#'va'zb'x*5>p!9>s!#!0x%#YscYubYubYzaYK_YqaYpr('2u_2s"2u^2nM`2nM_2pm2q\2n*sZ2K#2sZ2m2pr,c&r(4o&'z)'v<o/'n*s''q<o0'n*s%'no;o2'no&'!F5'v6'z)'no3.m'zG'v4,'Or#2'zdldlcoclb'v`'pr+=2vTNu'2tm2z^2n&r*/DubDzbDx%/2va2v`2qb2K\2s$2zd28282r4!4Mc&x#!3M&&uW&K$MW'&t'q#M#&uQ'!F"&u!&uV'nM!&qX'K`'nMb'zb'zc'x'C2s^2O!9282ud2sa2m2sa2tm2sa2v\2no^2n%m2s]2K`2q`2qa2Om2s_2va2Om2s^2qPDu,2K!/DnM,2nMFDu$Dq,2nMDDq"DpmDs-2KHDs!Dv/2nMJDv/2no]2no]2no]2no^2s#2u^2s#2zb2vd282uc282uc2ud2r1G,8,r/(2ue2r#Y&u`&pr1edx;7!H#!%&ub&pmM`&tmM`&r"N&udM%M\&u$M]&n&r'P&z,.sR&ubMm&udM[&ufMe&r$,&r"!)cubcpr=)'r'aMd&r%!/ocl]1n$l\1nM^1K^1no`1v",s^1u#,sa/to`'m/toa'qa0'p&u_0'p&Or#!50r"!/M$MZ&pm&qY&n*s[&!><Ju>&no:Ju!Js<&n*s6JuC&no]&K_&Or"kNubNpr1:&z`'t&zU&'tm'n)&uR>pm&n)'vQM">&!>!'zQ>M#&!>"'zQ>&t,n&'vZ,n&'q!o!'vV,'.u!'v"o]'p&po_'vc&oE,s<&toD,s<'zD,s<'vdob,r*^o!oco$M#MUM+&mM_&u!&uWM&&u!MV'z%&pmMXo&&z\l"&z['ml!&OmMX&O'p&v!MQ/u#&p'O&zV/s#&p'O&z\&O't&uU'v$&z[l&&'1ub'zd',r$Podlc'x+>DucDu_Dz^DucDzjD!9DsbWr((PuYoT1s-lP1to)l"lQ1v('z"'M]'n$,sB,s<'tm,uB,s:01s#,z]1r$0erX!2!H!7&
+!K	Ns!N
+!H	od'r
+!F	n)s
+!?	bAzcA
+!>	n(s
+!<	ryyr
+!:	n)sRYq#b
+!9	r"Q
+!8	NucN
+@	Zn
+!7	@
+!6	AzbA
+g	Au
+!5	g
+O	n#
+!4	O
+8	sd
+!3	8
+l	'u
+!2	l
+x	tr
+!1	x
+M	&s
+!0	M
+K	n%s
+!/	K
+p	n"
+!.	p
+q	n$s
+!+	q
+t	n!
+!*	t
+o	's
+!)	o
+w	!n
+!%	w
+v	n#s
+!$	v
+r	mo
+!#	r
+z	n"s
+u	n!s
+s	mn
