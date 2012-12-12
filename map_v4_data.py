@@ -62,7 +62,7 @@ print "checksum",sum(ord(ch) for ch in data)
 ofs, rle = 0, ""
 run_1, run_2, run_3, code = chr(code), chr(code+1), chr(code+2), code+3
 run_zero = None #UPPER-code # set to None to disable
-MIN, MAX = 2, RANGE**2 # fun fact: swapping out (code,code) for (run,2) gives the next stage more to work on
+MIN, MAX = 2, RANGE**2 # fun fact: swapping out (code,code) for (code,rle-1) gives the next stage more to work on
 while ofs < len(data):
     run = 0
     while ofs+run+1 < len(data) and run < MAX:
