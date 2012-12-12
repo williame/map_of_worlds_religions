@@ -60,9 +60,9 @@ print "checksum",sum(ord(ch) for ch in data)
 
 # now RLE it
 ofs, rle = 0, ""
-run_short, run_long, code = chr(code), chr(code+1), code+2
+run_1, run_2, run_3, code = chr(code), chr(code+1), chr(code+2), code+3
 run_zero = None #UPPER-code # set to None to disable
-MIN, MAX = 2, RANGE**2
+MIN, MAX = 2, RANGE**2 # fun fact: swapping out (code,code) for (run,2) gives the next stage more to work on
 while ofs < len(data):
     run = 0
     while ofs+run+1 < len(data) and run < MAX:
@@ -71,15 +71,20 @@ while ofs < len(data):
         else:
             break
     rle += data[ofs]
-    if run > MIN:
+    if run >= MIN:
         if run_zero and run < run_zero:
             rle += chr(code+run)
         elif run < RANGE:
-            rle += run_short
+            rle += run_1
             rle += chr(LOWER+run)
-        else:
-            rle += run_long
+        elif run < RANGE*RANGE:
+            rle += run_2
             rle += chr(LOWER+(run//RANGE))
+            rle += chr(LOWER+(run%RANGE))
+        else:
+            rle += run_3
+            rle += chr(LOWER+((run//(RANGE*RANGE))))
+            rle += chr(LOWER+((run//RANGE)%RANGE))
             rle += chr(LOWER+(run%RANGE))
         ofs += run+1
     else:
@@ -88,9 +93,12 @@ print "rle",len(rle),hu(len(rle))
 
 # now compress substrings
 buf, compressed = rle, ""
+MAX_REPLACE = 12
 while True:
     # count all the strings of lengths 1 to 5
-    counts = [None,defaultdict(int),defaultdict(int),defaultdict(int),defaultdict(int),defaultdict(int)]
+    counts = [None]
+    for i in xrange(MAX_REPLACE):
+        counts.append(defaultdict(int))
     for ofs in xrange(len(buf)):
         for i in xrange(1,len(counts)):
             if ofs+i == len(buf):
@@ -100,6 +108,8 @@ while True:
     commonest = [None]
     for i in xrange(1,len(counts)):
         commonest.append(sorted((count,key) for key,count in counts[i].items())[-1])
+    if not compressed: # first time, so trivia
+        print "trivia",commonest[-1]
     # find an unused character or digraph
     unused, unused_len = None, None
     for i in xrange(LOWER,UPPER+1):
@@ -165,26 +175,35 @@ else:
     print rle
     sys.exit("decompression failed!")
 unrle = ""
-ofs = 0
+ofs, prev = 0, None
 while ofs < len(uncompressed):
     ch = uncompressed[ofs]
     ofs += 1
-    next = uncompressed[ofs] if ofs < len(uncompressed) else None
     run = 1
-    if next == run_short:
+    if ch == run_1:
+        ch = prev
+        run = ord(uncompressed[ofs])-LOWER
+        ofs += 1
+    elif ch == run_2:
+        ch = prev
+        run = (ord(uncompressed[ofs])-LOWER)*RANGE
         run += ord(uncompressed[ofs+1])-LOWER
         ofs += 2
-    elif next == run_long:
-        run += (ord(uncompressed[ofs+1])-LOWER)*RANGE + ord(uncompressed[ofs+2])-LOWER
+    elif ch == run_3:
+        ch = prev
+        run = (ord(uncompressed[ofs])-LOWER)*RANGE*RANGE
+        run += (ord(uncompressed[ofs+1])-LOWER)*RANGE
+        run += ord(uncompressed[ofs+2])-LOWER
         ofs += 3
-    elif ord(next) > code:
+    elif ord(ch) > code:
         assert run_zero
-        run += ord(uncompressed[ofs])-code
-        ofs += 1
+        run = ord(ch)-code
+        ch = prev
     for i in xrange(run):
         unrle += ch
+    prev = ch
     if not data.startswith(unrle):
-        print "###",ofs,ch,next,next==run_short,next==run_long,ord(ch)>code,run
+        print "###",ofs,prev,ch,ch==run_1,ch==run_2,ch==run_3,ord(ch)>code,run
         print unrle
         print data[:len(unrle)]
         sys.exit("un-rle failed!")
