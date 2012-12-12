@@ -43,8 +43,8 @@ dup, code = chr(code), code+1
 data = ""
 prev = [[None]*width for _ in xrange(height)]
 for year in xrange(len(years)):
-    for y in xrange(height):
-        for x in xrange(width):
+    for x in xrange(width): # this leads to better RLE compression, doing column order
+        for y in xrange(height):
             row = rows[1+(x*height)+y+1].split("\t")
             assert int(row[0]) == x+1, (x,y,row)
             assert int(row[1]) == y+1, (x,y,row)
